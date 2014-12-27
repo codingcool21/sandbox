@@ -9,7 +9,7 @@ function SearchResult() {
         this.VideoName = video_name;
     }
     this.objectAsHTML = function () {
-        var htmlstring = '<div class="search-result" data-youtube-video-id="' + this.VideoID + '">' + '<a href="#" data-link="../YouTube%20in%20JWPlayer/index.html?video_id=' + this.VideoID + '" onclick="openLinkInNewTab(this)">' + this.VideoName + '</a></div>';
+        var htmlstring = '<div class="search-result" data-youtube-video-id="' + this.VideoID + '">' + '<a href="#" data-link="../YouTube%20in%20JWPlayer/index.html?video_id=' + this.VideoID + '&title=' + this.VideoName + '"onclick="openLinkInNewTab(this)">' + this.VideoName + '</a></div>';
         return htmlstring;
     }
 }

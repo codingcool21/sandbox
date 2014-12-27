@@ -28,6 +28,13 @@ $scope.find_out_param_url = function (key_param, callback) {
     }
 }
 $(function () {
+    $scope.find_out_param_url("title", function (title) {
+        if (title == false) {
+            return;
+        } else {
+            $("#title").text(title);
+        }
+    });
     $scope.find_out_param_url("video_id", function (result) {
         $scope.videoID = result;
         if ($scope.videoID == false) {
@@ -36,12 +43,12 @@ $(function () {
             jwplayer("video-container").setup({
                 file: 'http://www.youtube.com/watch?v=' + $scope.videoID,
                 width: $(window).innerWidth() - 15,
-                height: $(window).innerHeight() - 20,
+                height: $(window).innerHeight() - 45,
                 autostart: true
             })
         }
     });
     $(window).resize(function () {
-        jwplayer().resize($(window).innerWidth()-15, $(window).innerHeight()-20);
+        jwplayer().resize($(window).innerWidth() - 15, $(window).innerHeight() - 45);
     });
 });
