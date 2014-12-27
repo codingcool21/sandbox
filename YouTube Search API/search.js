@@ -9,14 +9,16 @@ function SearchResult() {
         this.VideoName = video_name;
     }
     this.objectAsHTML = function () {
-        var htmlstring = '<div class="search-result" data-youtube-video-id="' + this.VideoID + '">' + '<a href="#" data-link="http://www.youtube.com/embed/' + this.VideoID + '" onclick="openLinkInNewTab(this)">' + this.VideoName + '</a></div>';
+        var htmlstring = '<div class="search-result" data-youtube-video-id="' + this.VideoID + '">' + '<a href="#" data-link="../YouTube%20in%20JWPlayer/index.html?video_id=' + this.VideoID + '" onclick="openLinkInNewTab(this)">' + this.VideoName + '</a></div>';
         return htmlstring;
     }
 }
 
 function googleApiClientReady() {
+    // Ask fro the API Key
+    var key = prompt("Enter the Google API Key");
     // Set the Google API Client with an API key
-    gapi.client.setApiKey("AIzaSyCqFAAm5C5_csZroDHum41ATaiGLVCmSPU");
+    gapi.client.setApiKey(key);
     // Load the Javascript API (v3)
     gapi.client.load("youtube", "v3").then(handleAPILoaded(), function (e) {
         alert("Error: " + e);
