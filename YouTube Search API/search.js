@@ -15,8 +15,10 @@ function SearchResult() {
 }
 
 function googleApiClientReady() {
+    // Ask fro the API Key
+    var key = prompt("Enter the Google API Key");
     // Set the Google API Client with an API key
-    gapi.client.setApiKey("AIzaSyCqFAAm5C5_csZroDHum41ATaiGLVCmSPU");
+    gapi.client.setApiKey(key);
     // Load the Javascript API (v3)
     gapi.client.load("youtube", "v3").then(handleAPILoaded(), function (e) {
         alert("Error: " + e);
