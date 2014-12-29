@@ -16,7 +16,7 @@ function SearchResult() {
 
 function googleApiClientReady() {
     // Ask for the API Key
-    var key = prompt("Enter the Google API Key");
+    var key = "AIzaSyCqFAAm5C5_csZroDHum41ATaiGLVCmSPU";
     // Set the Google API Client with an API key
     gapi.client.setApiKey(key);
     // Load the Javascript API (v3)
